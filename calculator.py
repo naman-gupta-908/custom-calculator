@@ -2,16 +2,16 @@ from tkinter import *
 
 root = Tk()
 root.title("Calculator")
-root.config(bg='#D3D3D3')
+root.config(bg='#505050')
 
 root.wm_iconbitmap("Calculator.ico")
 
-e = Entry(root, font="lucida 20 bold")
+e = Entry(root, font="Aerial 20 bold")
 e.grid(row = 0, column= 0, columnspan=3, padx=10, pady=10)
 
 
 
-"""function for calculator functioning """
+"""define function for calculator function """
 def button_add(number):
     current = e.get()
     e.delete(0, END)
@@ -65,27 +65,30 @@ def button_equal():
     if math == "division":
         e.insert(0, fst_num / int(sec_number))
 
+bg_number='#000000'
+bg_sign='#383838'
 
+fg_number='#FFFFFF'
+font="Aerial 15 bold"
+"""Define Buttons """
+button_1 = Button(root, text="1", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(1))
+button_2 = Button(root, text="2", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(2))
+button_3 = Button(root, text="3", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(3))
+button_4 = Button(root, text="4", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(4))
+button_5 = Button(root, text="5", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(5))
+button_6 = Button(root, text="6", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(6))
+button_7 = Button(root, text="7", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(7))
+button_8 = Button(root, text="8", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(8))
+button_9 = Button(root, text="9", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(9))
+button_0 = Button(root, text="0", bg=bg_number,fg=fg_number,font=font, padx=40, pady=20, command=lambda : button_add(0))
+button_sum = Button(root, text="+", bg=bg_sign,fg=fg_number,font=font, padx=40, pady=20, command=button_addition)
+button_sub = Button(root, text="-", bg=bg_sign,fg=fg_number,font=font, padx=40, pady=20, command=button_subtract)
+button_mul = Button(root, text="*", bg=bg_sign,fg=fg_number,font=font, padx=40, pady=20, command=button_multiply)
+button_div = Button(root, text="/", bg=bg_sign,fg=fg_number,font=font, padx=40, pady=20, command=button_division)
+button_eq = Button(root, text="=", bg=bg_sign,fg=fg_number,font=font, padx=40, pady=20, command=button_equal)
+button_clear = Button(root, text="C", bg=bg_sign,fg=fg_number,font=font, padx=40, pady=20, command=button_clear1)
 
-"""Defining Buttons """
-button_1 = Button(root, text="1", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(1))
-button_2 = Button(root, text="2", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(2))
-button_3 = Button(root, text="3", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(3))
-button_4 = Button(root, text="4", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(4))
-button_5 = Button(root, text="5", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(5))
-button_6 = Button(root, text="6", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(6))
-button_7 = Button(root, text="7", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(7))
-button_8 = Button(root, text="8", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(8))
-button_9 = Button(root, text="9", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(9))
-button_0 = Button(root, text="0", bg='#A9A9A9', padx=50, pady=20, command=lambda : button_add(0))
-button_sum = Button(root, text="+", bg='#C0C0C0', padx=50, pady=20, command=button_addition)
-button_sub = Button(root, text="-", bg='#C0C0C0', padx=50, pady=20, command=button_subtract)
-button_mul = Button(root, text="*", bg='#C0C0C0', padx=50, pady=20, command=button_multiply)
-button_div = Button(root, text="/", bg='#C0C0C0', padx=50, pady=20, command=button_division)
-button_eq = Button(root, text="=", bg='#C0C0C0', padx=50, pady=20, command=button_equal)
-button_clear = Button(root, text="C", bg='#C0C0C0', padx=50, pady=20, command=button_clear1)
-
-"""Putting the buttons on the screen"""
+"""Put the buttons on the screen"""
 button_1.grid(row=1, column=0, padx=10, pady=10)
 button_2.grid(row=1, column=1, padx=10, pady=10)
 button_3.grid(row=1, column=2, padx=10, pady=10)
